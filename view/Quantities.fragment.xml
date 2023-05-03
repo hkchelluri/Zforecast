@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+	<Dialog title="">
+		<beginButton text="Close" press = "onCloseFragment"></beginButton>
+		<content>
+			<table:Table rows="{/results}" selectionMode = "None">
+				<table:columns>
+						<table:Column>
+						<Label text="Week"/>
+						<table:template>
+							<Text text="{Quarter}"></Text>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Quantity"/>
+						<table:template>
+							<Text text="{Quantity}"></Text>
+						</table:template>
+					</table:Column>
+				
+				</table:columns>
+			</table:Table>
+			
+		</content>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+						<Button text="Download" press="onExportQuarters" ></Button>
+						<Button text="Close" press="onClose"></Button>
+				</content>
+			</Toolbar>
+	</Dialog>
+</core:FragmentDefinition>

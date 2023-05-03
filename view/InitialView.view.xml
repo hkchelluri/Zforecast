@@ -1,0 +1,178 @@
+<mvc:View controllerName="E102.zForecast.controller.InitialView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:ui="sap.ui.table"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.m.semantic" xmlns:sv="sap.ui.comp.smartvariants"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<semantic:SemanticPage id="page">
+					<semantic:customFooterContent>
+						<!--<Button text="Display Quantities" press="onPressQunatities" visible="false" id="quarterQty" type="Accept"></Button>-->
+						<OverflowToolbar id="tool">
+							<ToolbarSpacer/>
+							<Button press="onPressSaveAs" icon="sap-icon://action"/>
+						</OverflowToolbar>
+						<Button text="Display Mondays" press="onPressMondays" visible="true" id="reportQty" type="Accept"></Button>
+						<Button text="Save" press="onSave" id="zSave" type="Accept" visible="false"/>
+						<Button text="ConvertToPIR" press="onConvertToPIR" id="zConvertPIR" type="Accept" visible="false"/>
+					</semantic:customFooterContent>
+					<semantic:content>
+						<smartFilterBar:SmartFilterBar id="smartFilterBarReport" persistencyKey="UniqueAndStablePersistencyKey" considerSelectionVariants="true"
+							entitySet="ForecastReports" beforeVariantFetch="onBeforeVariantFetch" >
+							<smartFilterBar:controlConfiguration>
+								<smartFilterBar:ControlConfiguration key="MyOwnFilterField" index="1" label="Purpose" groupId="_BASIC" width="300px" mandatory="mandatory"
+									visibleInAdvancedArea="true">
+									<smartFilterBar:customControl>
+										<Select id="PurposeReport" customData:hasValue="true" change="onPurposeChange" selectedKey="Report">
+											<core:Item key="Report" text="Report"/>
+											<core:Item key="Review" text="Review"/>
+										</Select>
+									</smartFilterBar:customControl>
+								</smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="ForecastId" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="VersionId" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="MaterialCode" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="PlantCode" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="PurchasingGroupBuyer" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="ShipToCustomerNo" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="RecordStatus" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="PlanningPeriod" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Year" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+							</smartFilterBar:controlConfiguration>
+							<smartFilterBar:layoutData>
+								<FlexItemData shrinkFactor="0"/>
+							</smartFilterBar:layoutData>
+						</smartFilterBar:SmartFilterBar>
+						<smartFilterBar:SmartFilterBar id="smartFilterBar" visible="false" entitySet="Forecasts" persistencyKey="SmartFilter_Explored"
+							showClearButton="true" search="GoFilter">
+							<smartFilterBar:controlConfiguration>
+								<smartFilterBar:ControlConfiguration key="ForecastId" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="VersionId" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="MaterialCode" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="PlantCode" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="PurchasingGroupBuyer" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="ShipToCustomerNo" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="RecordStatus" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="PlanningPeriod" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Year" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								<!--<smartFilterBar:ControlConfiguration key="Period" index="2" label="Period" groupId="_BASIC" width="300px" mandatory="mandatory"-->
+								<!--	visibleInAdvancedArea="true">-->
+								<!--	<smartFilterBar:customControl>-->
+								<!--		<Select id="Period" customData:hasValue="true">-->
+								<!--			<core:Item key="Week" text="Display Calendar Week"/>-->
+								<!--			<core:Item key="Monday" text="Display Monday"/>-->
+								<!--		</Select>-->
+								<!--	</smartFilterBar:customControl>-->
+								<!--</smartFilterBar:ControlConfiguration>-->
+								<smartFilterBar:ControlConfiguration key="MyOwnFilterField" index="1" label="Purpose" groupId="_BASIC" width="300px" mandatory="mandatory"
+									visibleInAdvancedArea="true">
+									<smartFilterBar:customControl>
+										<Select id="Purpose" customData:hasValue="true" change="onPurposeChange" selectedKey="Report">
+											<core:Item key="Review" text="Review"/>
+											<core:Item key="Report" text="Report"/>
+										</Select>
+									</smartFilterBar:customControl>
+								</smartFilterBar:ControlConfiguration>
+								<!--<smartFilterBar:ControlConfiguration key="MyField1" index="3" label="Status" groupId="_BASIC" width="300px" mandatory="mandatory"-->
+								<!--	visibleInAdvancedArea="true">-->
+								<!--	<smartFilterBar:customControl>-->
+								<!--		<Select id="quarter" customData:hasValue="true" change="onQuarterChange" selectedKey="Q1">-->
+								<!--			<core:Item key="Q1" text="Q1"/>-->
+								<!--			<core:Item key="Q2" text="Q2"/>-->
+								<!--			<core:Item key="Q3" text="Q3"/>-->
+								<!--			<core:Item key="Q4" text="Q4"/>-->
+								<!--		</Select>-->
+								<!--	</smartFilterBar:customControl>-->
+								<!--</smartFilterBar:ControlConfiguration>-->
+							</smartFilterBar:controlConfiguration>
+						</smartFilterBar:SmartFilterBar>
+						<smartTable:SmartTable id="idSmartTableReport" entitySet="ForecastReports" smartFilterId="smartFilterBarReport" tableType="Table"
+							useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items"
+							showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="false"
+							initiallyVisibleFields="ForecastId,VersionId,Material,Plant,DeliveryPlant,ShipToCustomer,SoldToCustomer,ForecastOwner,PIRCreatedOn,LastReviewedDate,ReviewByDate,HviExclusive,ForecastType,BaseUom,S4BaseUom,PlanningPeriod,W01,W02,W03,W04,W05,W06,W07,W08,W09,W10,W11,W12,W13,W14,W15,W16,W17,W18,W19,W20,W21,W22,W23,W24,W25,W26,W27,W28,W29,W30,W31,W32,W33,W34,W35,W36,W37,W38,W39,W40,W41,W42,W43,W44,W45,W46,W47,W48,W49,W50,W51,W52,PurchasingGroupBuyerDesc,RecordStatus,StatusChangeDate,UserId,SoldToCustomerNo,Notes,ShipToCustomerNo,MaterialCode,PlantCode,DeliveryPlantNo,PurchasingGroupBuyer,ConvertToPir,PIRCreated"
+							beforeRebindTable="beforeRebindTable">
+							<ui:Table fixedColumnCount="6"></ui:Table>
+						</smartTable:SmartTable>
+						<smartTable:SmartTable id="idSmartTable" visible="false" entitySet="Forecasts" smartFilterId="smartFilterBar" tableType="Table"
+							useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items"
+							showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="false"
+							initiallyVisibleFields="ForecastId,VersionId,Material,Plant,DeliveryPlant,ShipToCustomer,SoldToCustomer,ForecastOwner,PIRCreatedOn,LastReviewedDate,ReviewByDate,HviExclusive,ForecastType,BaseUom,S4BaseUom,PlanningPeriod,W01,W02,W03,W04,W05,W06,W07,W08,W09,W10,W11,W12,TotalQuantity,PurchasingGroupBuyerDesc,RecordStatus,StatusChangeDate,UserId,SoldToCustomer,NotesTemp,Notes,ShipToCustomerNo,SoldToCustomerNo,MaterialCode,PlantCode,PurchasingGroupBuyer,DeliveryPlantNo,PurchasingGroupBuyer,ConvertToPir,ObjectId,StatusEditable,PIRCreated"
+							beforeRebindTable="beforeLoadTable">
+							<ui:Table fixedColumnCount="6" id="iduitable" visibleRowCount="6">
+								<ui:columns>
+									<ui:Column width="11rem">
+										<ui:customData>
+											<core:CustomData key="p13nData" value='\{"columnKey": "Notes", "maxLength": "5","columnIndex":"31", "leadingProperty": "Notes"}'/>
+										</ui:customData>
+										<Label text="Notes"/>
+										<ui:template>
+											<TextArea value="{Notes}" liveChange="onNotesChange"/>
+										</ui:template>
+									</ui:Column>
+									<!--	<ui:Column width="11rem">-->
+									<!--	<ui:customData>-->
+									<!--		<core:CustomData key="p13nData" value='\{"columnKey": "Notes", "maxLength": "5","columnIndex":"41", "leadingProperty": "Notes"}'/>-->
+									<!--	</ui:customData>-->
+									<!--	<Label text="Text"/>-->
+									<!--	<ui:template>-->
+									<!--		<Text text="{i18n>test} {i18n>lineFeed} {i18n>sample}"/>-->
+									<!--	</ui:template>-->
+									<!--</ui:Column>-->
+									<ui:Column width="11rem">
+										<ui:customData>
+											<core:CustomData key="p13nData"
+												value='\{"columnKey": "RecordStatus", "maxLength": "5","columnIndex":"27", "leadingProperty": "RecordStatus"}'/>
+										</ui:customData>
+										<Label text="Status"/>
+										<ui:template>
+											<ComboBox selectedKey="{RecordStatus}" change="onChangeStatus" enabled="{= ${StatusEditable} === 'X' }">
+												<core:Item key="Z01" text="New" enabled="{= 'Z01' > ${RecordStatus}}"/>
+												<core:Item key="Z02" text="In-Review" enabled="{= 'Z02' > ${RecordStatus} }"/>
+												<core:Item key="Z03" text="Accepted" enabled="{= 'Z03' > ${RecordStatus} }"></core:Item>
+												<core:Item key="Z04" text="Rejected" enabled="{= 'Z04' > ${RecordStatus} }"/>
+												<core:Item key="Z05" text="Revision Pending" enabled="{= 'Z05' > ${RecordStatus} }"/>
+												<core:Item key="Z06" text="Revised" enabled="{= 'Z06' > ${RecordStatus} }"/>
+												<core:Item key="Z07" text="Request To Cancel" enabled="{= 'Z07' > ${RecordStatus} }"/>
+												<core:Item key="Z08" text="Cancelled"/>
+											</ComboBox>
+										</ui:template>
+									</ui:Column>
+									<ui:Column width="11rem">
+										<ui:customData>
+											<core:CustomData key="p13nData" value='\{"columnKey": "ReOrdPtUpd", "maxLength": "5","columnIndex":"63", "leadingProperty": "ReOrdPtUpd"}'/>
+										</ui:customData>
+										<Label text="Reorder Point Changed"/>
+										<ui:template>
+											<ComboBox selectedKey="{ReOrdPtUpd}" change="handleOrdPtChange" enabled="{= ${StatusEditable} === 'X' }">
+												<core:Item key="YES" text="YES" enabled="{= 'YES' > ${ReOrdPtUpd} }"/>
+												<core:Item key="NO" text="NO" enabled="{= 'NO' > ${ReOrdPtUpd} }"/>
+											</ComboBox>
+										</ui:template>
+									</ui:Column>
+									<!--	<ui:Column width="11rem" visible="false">-->
+									<!--	<ui:customData>-->
+									<!--		<core:CustomData key="p13nData" value='\{"columnKey": "Date01", "maxLength": "5","columnIndex":"39", "leadingProperty": "Date01"}'/>-->
+									<!--	</ui:customData>-->
+									<!--	<Label text="Date01"/>-->
+									<!--	<ui:template>-->
+									<!--		<Text text="{Date01}" />-->
+									<!--	</ui:template>-->
+									<!--</ui:Column>-->
+									<!--	<ui:Column width="11rem" visible="false">-->
+									<!--	<ui:customData>-->
+									<!--		<core:CustomData key="p13nData" value='\{"columnKey": "Date02", "maxLength": "5","columnIndex":"40", "leadingProperty": "Date02"}'/>-->
+									<!--	</ui:customData>-->
+									<!--	<Label text="Date02"/>-->
+									<!--	<ui:template>-->
+									<!--		<Text text="{Date02}" />-->
+									<!--	</ui:template>-->
+									<!--</ui:Column>-->
+								</ui:columns>
+							</ui:Table>
+						</smartTable:SmartTable>
+					</semantic:content>
+				</semantic:SemanticPage>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

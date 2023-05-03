@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";return{CalendarWeekConvert:function(e){if(e!=null){var n=this.byId("PeriodReport").getSelectedKey();if(n==="Week"){return"CW"+e}else{}}},addNewLine:function(e){var n=e;n=n.replace("<br>","\n");return n},productCount:function(e){return e.length}}});

@@ -1,0 +1,163 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "E102.zForecast",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZDTS_E102_FORECAST_V2_SRV": {
+				"uri": "/sap/opu/odata/sap/ZDTS_E102_FORECAST_V2_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZDTS_E093_PIR_SRV": {
+				"uri": "/sap/opu/odata/sap/ZDTS_E093_PIR_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZDTS_E093_PIR_SRV/metadata.xml"
+				}
+			},
+			"INTEROP": {
+				"uri": "/sap/opu/odata/ui2/INTEROP/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/INTEROP/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "E102.zForecast.view.InitialView",
+			"type": "XML",
+			"async": true,
+			"id": "InitialView"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "E102.zForecast.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZDTS_E102_FORECAST_V2_SRV",
+				"preload": true
+			},
+			"PIR": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZDTS_E093_PIR_SRV",
+				"preload": true
+			},
+			"GlobalContainers": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "INTEROP",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "E102.zForecast.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "RouteInitialView",
+				"pattern": "RouteInitialView",
+				"target": ["TargetInitialView"]
+			}, {
+				"pattern": ":?sap-iapp-state:",
+				"name": "notifListQuery",
+				"target": "InitialView"
+			}],
+			"targets": {
+				"TargetInitialView": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "InitialView",
+					"viewName": "InitialView"
+				},
+				"InitialView": {
+					"viewPath": "E102.zForecast.view",
+					"viewName": "InitialView",
+					"viewLevel": 1
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/ze102_forecast",
+		"_version": "1.1.0"
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

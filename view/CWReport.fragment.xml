@@ -1,0 +1,407 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+	<Dialog title=" Mondays">
+		
+
+	<content>
+
+							
+										
+											
+			
+			<table:Table rows="{/results}" selectionMode="None">
+				<table:columns>
+					
+					<table:Column width = "6em">
+						<Label text="W01"/>
+						<table:template>
+							<Text text="{W01}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W02"/>
+						<table:template>
+							<Text text="{W02}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W03"/>
+						<table:template>
+							<Text text="{W03}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W04"/>
+						<table:template>
+							<Text text="{W04}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W05"/>
+						<table:template>
+							<Text text="{W05}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W06"/>
+						<table:template>
+							<Text text="{W06}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W07"/>
+						<table:template>
+							<Text text="{W07}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W08"/>
+						<table:template>
+							<Text text="{W08}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W09"/>
+						<table:template>
+							<Text text="{W09}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W10"/>
+						<table:template>
+							<Text text="{W10}"></Text>
+						</table:template>
+					</table:Column>
+					
+						
+					<table:Column width = "6em">
+						<Label text="W11"/>
+						<table:template>
+							<Text text="{W11}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W12"/>
+						<table:template>
+							<Text text="{W12}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W13"/>
+						<table:template>
+							<Text text="{W13}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W14"/>
+						<table:template>
+							<Text text="{W14}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W15"/>
+						<table:template>
+							<Text text="{W15}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W16"/>
+						<table:template>
+							<Text text="{W16}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W17"/>
+						<table:template>
+							<Text text="{W17}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W18"/>
+						<table:template>
+							<Text text="{W18}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W19"/>
+						<table:template>
+							<Text text="{W19}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W20"/>
+						<table:template>
+							<Text text="{W20}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						
+					<table:Column width = "6em">
+						<Label text="W21"/>
+						<table:template>
+							<Text text="{W21}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W22"/>
+						<table:template>
+							<Text text="{W22}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W23"/>
+						<table:template>
+							<Text text="{W23}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W24"/>
+						<table:template>
+							<Text text="{W24}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W25"/>
+						<table:template>
+							<Text text="{W25}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W26"/>
+						<table:template>
+							<Text text="{W26}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W27"/>
+						<table:template>
+							<Text text="{W27}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W28"/>
+						<table:template>
+							<Text text="{W28}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W29"/>
+						<table:template>
+							<Text text="{W29}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W30"/>
+						<table:template>
+							<Text text="{W30}"></Text>
+						</table:template>
+					</table:Column>
+					
+						
+					<table:Column width = "6em">
+						<Label text="W31"/>
+						<table:template>
+							<Text text="{W31}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W32"/>
+						<table:template>
+							<Text text="{W32}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W33"/>
+						<table:template>
+							<Text text="{W33}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W34"/>
+						<table:template>
+							<Text text="{W34}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W35"/>
+						<table:template>
+							<Text text="{W35}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W36"/>
+						<table:template>
+							<Text text="{W36}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W37"/>
+						<table:template>
+							<Text text="{W37}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W38"/>
+						<table:template>
+							<Text text="{W38}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W39"/>
+						<table:template>
+							<Text text="{W39}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W40"/>
+						<table:template>
+							<Text text="{W40}"></Text>
+						</table:template>
+					</table:Column>
+					
+						
+					<table:Column width = "6em">
+						<Label text="W41"/>
+						<table:template>
+							<Text text="{W41}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W42"/>
+						<table:template>
+							<Text text="{W42}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W43"/>
+						<table:template>
+							<Text text="{W43}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W44"/>
+						<table:template>
+							<Text text="{W44}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W45"/>
+						<table:template>
+							<Text text="{W45}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W46"/>
+						<table:template>
+							<Text text="{W46}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W47"/>
+						<table:template>
+							<Text text="{W47}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W48"/>
+						<table:template>
+							<Text text="{W48}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W49"/>
+						<table:template>
+							<Text text="{W49}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W50"/>
+						<table:template>
+							<Text text="{W50}"></Text>
+						</table:template>
+					</table:Column>
+					
+						<table:Column width = "6em">
+						<Label text="W51"/>
+						<table:template>
+							<Text text="{W51}"></Text>
+						</table:template>
+					</table:Column>
+					
+					
+						<table:Column width = "6em">
+						<Label text="W52"/>
+						<table:template>
+							<Text text="{W52}"></Text>
+						</table:template>
+					</table:Column>
+					
+				
+				</table:columns>
+			</table:Table>
+		</content>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+						<Button text="Download" press="onDataExport" ></Button>
+						<Button text="Close" press="onpressClose"></Button>
+				</content>
+			</Toolbar>
+		
+			
+	</Dialog>
+</core:FragmentDefinition>

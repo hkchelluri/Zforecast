@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:foot="sap.ushell.ui.footerbar" xmlns:semantic="sap.m.semantic.FullscreenPage" >
+	<Popover id="saveAsTilePopoverID" showHeader="false" placement="Top" >
+		<VBox class="sapMPopoverCont">
+			<!--<Button text="Send Email" press="onPress" iconFirst="true" icon="sap-icon://email"/>-->
+			<foot:AddBookmarkButton id="book" text="Save as Tile" title = "Forecast Report" press="onSaveTilePress"   showGroupSelection = "true"/>
+		</VBox>
+	</Popover>
+</core:FragmentDefinition>

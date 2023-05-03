@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";return{addNewLine:function(e){var n=e;n=n.replace("<br>","\n");return n}}});

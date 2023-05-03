@@ -1,0 +1,125 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="PIR Conversion Failed; Check the log file" title="PIR Conversion Summary" confirm=".downloadLogFile"
+		cancel=".handleClose" items="{ path : '/', sorter : { path : 'Name', descending : false } }" id="idTableSelect" >
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{Name}" text="{Material Number}"/>
+				<Text text="{Plant}"/>
+				<Text text="{Year}"/>
+				<Text text="{RecType}"/>
+				<Text text="{Quarter}"/>
+				<Text text="{UOM}"/>
+				<Text text="{W01}"/>
+				<Text text="{W02}"/>
+				<Text text="{W03}"/>
+				<Text text="{W04}"/>
+				<Text text="{W05}"/>
+				<Text text="{W06}"/>
+				<Text text="{W07}"/>
+				<Text text="{W08}"/>
+				<Text text="{W09}"/>
+				<Text text="{W10}"/>
+				<Text text="{W11}"/>
+				<Text text="{W12}"/>
+				<Text text="{W13}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em">
+				<header>
+					<Text text="Material"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" width="12em">
+				<header>
+					<Text text="Plant"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true"  width="8em">
+				<header>
+					<Text text="Year"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true"  width="8em">
+				<header>
+					<Text text="RecType"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="5em">
+				<header>
+					<Text text="Quarter"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="5em" >
+				<header>
+					<Text text="UOM"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W01"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W02"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W03"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W04"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W05"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W06"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W07"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W08"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W09"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W10"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W11"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W12"/>
+				</header>
+			</Column>
+			<Column hAlign="End" width="12em">
+				<header>
+					<Text text="W13"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

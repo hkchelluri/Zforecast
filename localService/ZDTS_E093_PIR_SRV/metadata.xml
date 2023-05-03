@@ -1,0 +1,36 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZDTS_E093_PIR_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Order" sap:content-version="1">
+				<Key><PropertyRef Name="MaterialNumber"/><PropertyRef Name="Plant"/></Key><Property Name="MaterialNumber" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="MaterialNumber" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="RequirementType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="RequirementType" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Version" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Version" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DateType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DateType" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FinishDate" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FinishDate" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PlannedQuantity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PlannedQuantity" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VersionActive" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="VersionActive" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DeletionIndicator" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DeletionIndicator"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Message" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SNo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SNo" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Header" sap:content-version="1">
+				<Key><PropertyRef Name="MaterialNumber"/></Key><Property Name="MaterialNumber" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="MaterialNumber" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="navToOrder" Relationship="ZDTS_E093_PIR_SRV.HeaderToOrder" FromRole="FromRole_HeaderToOrder"
+					ToRole="ToRole_HeaderToOrder"/></EntityType>
+			<Association Name="HeaderToOrder" sap:content-version="1"><End Type="ZDTS_E093_PIR_SRV.Header" Multiplicity="1" Role="FromRole_HeaderToOrder"/><End Type="ZDTS_E093_PIR_SRV.Order" Multiplicity="*" Role="ToRole_HeaderToOrder"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_HeaderToOrder"><PropertyRef Name="MaterialNumber"/></Principal>
+					<Dependent Role="ToRole_HeaderToOrder"><PropertyRef Name="MaterialNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZDTS_E093_PIR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Orders" EntityType="ZDTS_E093_PIR_SRV.Order" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="Headers" EntityType="ZDTS_E093_PIR_SRV.Header" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="HeaderToOrderSet" Association="ZDTS_E093_PIR_SRV.HeaderToOrder" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="Headers" Role="FromRole_HeaderToOrder"/><End EntitySet="Orders" Role="ToRole_HeaderToOrder"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZDTS_E093_PIR_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZDTS_E093_PIR_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
